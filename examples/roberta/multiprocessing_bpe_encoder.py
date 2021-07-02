@@ -73,7 +73,9 @@ def main():
         encoder = MultiprocessingEncoder(args)
         pool = Pool(args.workers, initializer=encoder.initializer)
         encoded_lines = pool.imap(encoder.encode_lines, zip(*inputs), 100)
-
+        # print(list(encoded_lines),"++++++++++")
+        # print(list(inputs[0]),"----------------")
+        # bre
         stats = Counter()
         for i, (filt, enc_lines) in enumerate(encoded_lines, start=1):
             if filt == "PASS":

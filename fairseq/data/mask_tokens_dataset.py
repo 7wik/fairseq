@@ -115,6 +115,10 @@ class MaskTokensDataset(BaseWrapperDataset):
     def __getitem_cached__(self, seed: int, epoch: int, index: int):
         with data_utils.numpy_seed(self.seed, self.epoch, index):
             item = self.dataset[index]
+            # if item.max()>50264:
+                # print((item.max()),"+++++++++++++++++++++++++++++")
+            # print(type(index),"-------------------------------")
+            # bre
             sz = len(item)
 
             assert (

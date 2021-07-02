@@ -102,7 +102,7 @@ class Dictionary:
             for i in tensor
             if utils.item(i) not in extra_symbols_to_ignore
         )
-
+        # return sent
         return data_utils.post_process(sent, bpe_symbol)
 
     def unk_string(self, escape=False):

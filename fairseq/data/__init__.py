@@ -5,6 +5,7 @@
 """isort:skip_file"""
 
 from .dictionary import Dictionary, TruncatedDictionary
+from .replacement_dictionary import ReplacementDictionary
 
 from .fairseq_dataset import FairseqDataset, FairseqIterableDataset
 
@@ -32,6 +33,8 @@ from .list_dataset import ListDataset
 from .lm_context_window_dataset import LMContextWindowDataset
 from .lru_cache_dataset import LRUCacheDataset
 from .mask_tokens_dataset import MaskTokensDataset
+from .random_mask_tokens_dataset import RandomMaskTokensDataset
+from .supervised_mask_tokens_dataset import SupervisedMaskTokensDataset
 from .monolingual_dataset import MonolingualDataset
 from .multi_corpus_sampled_dataset import MultiCorpusSampledDataset
 from .nested_dictionary_dataset import NestedDictionaryDataset
@@ -78,6 +81,7 @@ __all__ = [
     "CountingIterator",
     "DenoisingDataset",
     "Dictionary",
+    "ReplacementDictionary",
     "EncodedFastaDataset",
     "EpochBatchIterator",
     "FairseqDataset",
@@ -96,6 +100,8 @@ __all__ = [
     "LMContextWindowDataset",
     "LRUCacheDataset",
     "MaskTokensDataset",
+    "RandomMaskTokensDataset",
+    "SupervisedMaskTokensDataset",
     "MMapIndexedDataset",
     "MonolingualDataset",
     "MultiCorpusSampledDataset",

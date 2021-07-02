@@ -262,7 +262,7 @@ def load_checkpoint(cfg: CheckpointConfig, trainer, **passthrough_args):
             epoch=1, load_dataset=True, **passthrough_args
         )
 
-    trainer.lr_step(epoch_itr.epoch)
+    # trainer.lr_step(epoch_itr.epoch)
 
     return extra_state, epoch_itr
 

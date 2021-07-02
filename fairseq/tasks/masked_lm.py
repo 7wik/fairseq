@@ -114,7 +114,6 @@ class MaskedLMTask(LegacyFairseqTask):
         super().__init__(args)
         self.dictionary = dictionary
         self.seed = args.seed
-
         # add mask token
         self.mask_idx = dictionary.add_symbol("<mask>")
 
@@ -136,7 +135,6 @@ class MaskedLMTask(LegacyFairseqTask):
         assert len(paths) > 0
         data_path = paths[(epoch - 1) % len(paths)]
         split_path = os.path.join(data_path, split)
-
         dataset = data_utils.load_indexed_dataset(
             split_path,
             self.source_dictionary,
@@ -157,6 +155,8 @@ class MaskedLMTask(LegacyFairseqTask):
             self.args.seed,
         )
 
+        # print(dataset.sizes,"+++++++++++++++++++")
+        # bre
         # create continuous blocks of tokens
         dataset = TokenBlockDataset(
             dataset,
@@ -177,6 +177,8 @@ class MaskedLMTask(LegacyFairseqTask):
             if self.args.mask_whole_words
             else None
         )
+        # print((self.mask_idx),"++++++++++++++++++++++++")
+        # bre
 
         src_dataset, tgt_dataset = MaskTokensDataset.apply_mask(
             dataset,

@@ -33,6 +33,8 @@ class AMPOptimizer(optim.FairseqOptimizer):
             cfg (omegaconf.DictConfig): fairseq args
             params (iterable): iterable of parameters to optimize
         """
+        print(params,"^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+        bre
         fp32_optimizer = optim.build_optimizer(cfg.optimizer, params)
         return cls(cfg, params, fp32_optimizer, **kwargs)
 

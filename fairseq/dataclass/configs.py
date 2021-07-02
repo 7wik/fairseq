@@ -219,6 +219,12 @@ class CommonConfig(FairseqDataclass):
             "help": "path to run plasma_store, defaults to /tmp/plasma. Paths outside /tmp tend to fail."
         },
     )
+    proxy_masks: Any = field(
+        default= ("<mask>", ),
+        metadata={
+            "help": "proxy replacement for the mask. If specified, will use the specified tokens for masking."
+        },
+    )
 
 
 @dataclass
